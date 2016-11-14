@@ -57,33 +57,33 @@ public class SparkTest {
         String[] sparkJobArgs = new String[] {
                 // the name of your application
                 "--name",
-                args[0],
+                args[1],
 
                 // memory for driver (optional)
                 "--driver-memory",
-                args[1],
-
-                "--num-executors",
                 args[2],
 
-                "--executor-memory",
+                "--num-executors",
                 args[3],
 
-                "--executor-cores",
+                "--executor-memory",
                 args[4],
+
+                "--executor-cores",
+                args[5],
 
                 // path to your application's JAR file
                 // required in yarn-cluster mode
                 "--jar",
-                args[5],
+                args[6],
 
                 // name of your application's main class (required)
                 "--class",
-                args[6],
+                args[7],
 
                 // argument 1 to your Spark program (SparkFriendRecommendation)
                 "--arg",
-                args[7]
+                args[8]
         };
         client.submitSparkJob(sparkJobArgs);
     }
